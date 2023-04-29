@@ -1,0 +1,71 @@
+# GITHUB-TOKEN-WATCHARA24MONTHON-organization-ci.properties.json-workflow-templates-README.md-patch-1.
+GITHUB_TOKEN as input.
+ This sample workflow uses the action of  labeler, which is set to be the GITHUB_TOKEN value for the repo-token input parameter:
+counterpart
+ name: Pull request labeler
+ on: [ pull_request_target ]
+
+ permissions:
+   contents: read
+   pull-requests: write
+
+ jobs:
+   triage:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/labeler@v4
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }} 
+
+
+ย.ม
+name: Pull request labeler
+on: [ pull_request_target ]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+ตัวอย่างที่ 2: การเรียกใช้ REST API
+คุณสามารถใช้ the GITHUB_TOKENเพื่อทำการเรียก API ที่รับรองความถูกต้อง เวิร์กโฟลว์ตัวอย่างนี้สร้างปัญหาโดยใช้ 
+
+1.) GITHUB_TOKEN value for repo-token input parameter:
+ counterpart
+  name: Pull request labeler
+  on: [ pull_request_target ]
+
+  permissions:
+    contents: read
+    pull-requests: write
+
+  jobs:
+    triage:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/labeler@v4
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+
+ counterpart
+ name: Pull request labeler
+ on: [ pull_request_target ]
+
+ permissions:
+   contents: read
+   pull-requests: write
+
+ jobs:
+   triage:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/labeler@v4
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }} 
